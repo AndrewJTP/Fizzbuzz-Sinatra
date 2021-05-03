@@ -1,0 +1,10 @@
+require 'sinatra'
+require './lib/fizzbuzz.rb'
+get '/' do
+    erb :principal
+end
+post "/generar" do
+    numero_ingresado=params[:numero_ingresado]
+    @resultado =fizzbuzz(numero_ingresado.to_i)
+    erb:vista_resultado
+end
